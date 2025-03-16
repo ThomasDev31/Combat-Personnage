@@ -1,0 +1,43 @@
+<?php require './Game/game.php';?>
+
+<div classs="container">
+    <?php $game = new Game() ?>
+    <?php if(!isset($_POST['number'])) : ?>
+        <?= $game->display() ?>
+    <div class="form-choices">
+        <h2>Veuilez choisir le nombre de joueurs pour la partie</h2>
+        <form method='POST'>
+            <fieldset>
+                <label for="number-players">Nombre de joueurs :</label>
+                <input type="number" min="2" max="6" id="number-players" name="number" required>
+                <input type="submit" value="Validez">
+            </fieldset>
+        </form>  
+    </div>
+    <?php else: ?>
+            <?php $index = 1 ?>
+            <form method='POST' action='?rooter=scrore'>
+            <?php for($i = 0; $i < $_POST['number']; $i++): ?>
+                <fieldset> 
+                    <legend>Personnage : <?= $index?></legend>
+                    <label for="name<?= $index ?>"> Nom du personnage :</label>
+                    <input type="texte" id="name<?= $index ?>" name="name[<?= $index?>]" required>
+                    <label for="strength<?= $index ?>"> Force du personnage :</label>
+                    <input type="number" min="10" max="100" id="strength<?= $index ?>" name="strength[<?= $index?>]">
+                    <label for="life<?= $index ?>"> Vie du personnage :</label>
+                    <input type="number" min="100" max="1000" id="life<?= $index ?>" name="life[<?= $index?>]">
+                    <label for="classes">Sélectionnez votre classe :</label>
+                    <select name="classe[<?= $index?>]" id="classes" required>
+                        <option value="Gobelin">Gobelin</option>
+                        <option value="Troll">Troll</option>
+                        <option value="Pangolin">Pangolin</option>
+                    </select>
+                </fieldset>
+                <?php $index++ ?>
+            <?php endfor; ?>
+            <input type="submit" value="Validez">
+            </form>  
+    <?php endif; ?>
+</div>
+
+

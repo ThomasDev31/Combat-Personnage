@@ -11,13 +11,13 @@ class Game{
         $this->players = $players;
     }
     
-    public function __tostring(){
-        return 'Nouvelle partie !';
+    public function display(){
+        return '<h1>Nouvelle partie ! </h1><br>';
     }
     
     public function addPlayer(Personnage $player){
         $this->players[] = $player;
-        echo ('Nouveau personnage ' . $player->getName());
+        echo ('Nouveau personnage ' . $player->getName() ."<br>");
     }
     
       public function attack(Personnage $attacker,Personnage $cible){
@@ -48,7 +48,7 @@ class Game{
         $round = 1;
         
         while(count($this->players) >1){
-            echo "Tour $round <br>";
+            echo "<br> <h3>Tour $round </h3><br>";
             
             $attackerIndex = array_rand($this->players);
             $attacker = $this->players[$attackerIndex];
@@ -82,6 +82,18 @@ class Game{
                 $round++;
             }
         
-        echo $this->players[0]->getName(). ' à gagné .';
+        echo "
+            <button class='open-modal'>Résultat</button>
+            <div class='modal'> 
+                <div class='content-modal'>
+                    <div class='btn'> 
+                        <button class='close'> <i class='fa-solid fa-xmark'></i></button>
+                    </div>
+                    <div class='content'>" 
+                        . $this->players[0]->getName(). " à gagné .
+                    </div> 
+                </div> 
+            </div>
+        " ;
     }   
 }

@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="views/styles/style.css?v=1.0"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container-nav">
+            <nav>
+                <ul>
+                    <li><a href="?rooter=accueil">Accueil</a></li>
+                    <li><a href="?rooter=combat">Combat</a></li>
+                    <li><a href="?rooter=scrore">Score</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <?php  include $template?>
+    </main>
+    <footer>
+        <p>Jeu créé par Thomas Tissier</p>
+        <div class="logo-container git">
+        <a href="https://github.com/ThomasDev31?tab=repositories"  target="_blank "class="text-black size-p"><i class="fa-brands fa-github" data-id="git"></i></a>
+            
+        </div>
+        </div>
+    </footer>
+    <script src="views/js/script.js"></script>
+</body>
+</html>
+
