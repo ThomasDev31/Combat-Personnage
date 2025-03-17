@@ -5,7 +5,7 @@
     <?php if(!isset($_POST['number'])) : ?>
         <?= $game->display() ?>
     <div class="form-choices">
-        <h2>Veuilez choisir le nombre de joueurs pour la partie</h2>
+        <h2>Veuillez choisir le nombre de joueurs pour la partie</h2>
         <form method='POST'>
             <fieldset>
                 <label for="number-players">Nombre de joueurs :</label>
@@ -35,7 +35,7 @@
                 </fieldset>
                 <?php $index++ ?>
             <?php endfor; ?>
-            <input type="submit" value="Validez">
+            <input type="submit" value="Valider">
             </form>  
     <?php endif; ?>
 </div>

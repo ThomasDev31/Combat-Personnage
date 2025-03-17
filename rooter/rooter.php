@@ -1,8 +1,8 @@
 <?php
-$url = $_GET['rooter'] ?? 'acceuil';
+$url = $_GET['rooter'] ?? 'accueil';
 
 switch($url){
-    case('acceuil'):
+    case('accueil'):
         $template = './views/index.phtml';
         break;
     case('combat'):
